@@ -6,7 +6,7 @@ class Test extends Component {
     const { selectAuthor, data } = this.props;
     return (
       <div className='App'>
-        <button onClick={() => selectAuthor(1)}>ON</button>
+        <button className='btn-danger' onClick={() => selectAuthor(1)}>ON</button>
         <h2>{data}</h2>
       </div>
     );
