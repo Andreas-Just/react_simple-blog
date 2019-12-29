@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  button {
+    padding: 10px 80px;
+    background-color: pink;
+    border-color: hotpink;
+     &:focus {
+       outline: none;
+     }
+  }
 }
 
 .App-logo {
