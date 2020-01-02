@@ -1,14 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { getNextState } from './store/reducers';
-import TestHandler from './component/Test/TestHandler';
+import store from './store/createStore';
+import Main from './component/Main/Main';
+import Header from './component/Header/Header';
+import Footer from './component/Footer/Footer';
 import './App.scss'
-
-const store = createStore(getNextState);
 
 export const App = () => (
   <Provider store={store}>
-    <TestHandler className='App' />
+    <div className='app container-fluid d-flex flex-column'>
+      <Header />
+      <Main />
+      <Footer />
+    </div>
   </Provider>
 );

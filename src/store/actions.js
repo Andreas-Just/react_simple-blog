@@ -1,10 +1,30 @@
 export const ACTION_TYPE = {
-  SELECT_AUTHOR: 'select_author',
+  SELECT_AUTHOR: 'SELECT_AUTHOR',
+  LOAD_POSTS: 'LOAD_POSTS',
 };
 
-export function selectAuthor(selectedIndex) {
-  return {
-    type: ACTION_TYPE.SELECT_AUTHOR,
-    selectedIndex
-  };
-}
+export const selectAuthor = selectedIndex => ({
+  type: ACTION_TYPE.SELECT_AUTHOR,
+  selectedIndex,
+});
+
+export const loadPosts = () => ({
+  type: 'LOAD_POSTS',
+  payload: {
+    request: {
+      method: 'get',
+      url: 'posts',
+    }
+  }
+});
+
+export const createPosts = () => ({
+  type: 'LOAD_POSTS',
+  payload: {
+    request: {
+      method: 'post',
+      url: 'posts',
+    }
+  }
+});
+

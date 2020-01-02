@@ -1,0 +1,14 @@
+.main {
+
+  &__btn {
+    padding: 1rem 4rem;
+    font-size: rem(18);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  button:focus {
+    outline: none;
+  }
+}
+
