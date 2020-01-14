@@ -1,7 +1,6 @@
 import { ACTION_TYPE } from "./actions";
 
 const initialState = {
-  selectedIndex: 1,
   posts: [
     /*{
       title: 'Что же означают эти эмодзи?',
@@ -52,12 +51,18 @@ const initialState = {
       id: 2
     }*/
   ],
+  isLoading: false,
 };
 
 export const getNextState = (state = initialState, action) => {
   console.log(action);
   switch (action.type) {
-    case ACTION_TYPE.SELECT_AUTHOR:
+    case ACTION_TYPE.CHANGE_LOADING:
+      return {
+        ...state,
+        isLoading: false
+      };
+      case ACTION_TYPE.SELECT_AUTHOR:
       return {
         ...state,
         selectedIndex: state.selectedIndex + action.selectedIndex
@@ -65,7 +70,8 @@ export const getNextState = (state = initialState, action) => {
     case ACTION_TYPE.LOAD_POSTS + '_SUCCESS':
       return {
         ...state,
-        posts: [...action.payload.data]
+        posts: [...action.payload.data],
+        isLoading: true
       };
     default:
       return state;

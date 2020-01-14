@@ -1,4 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+import {connect} from "react-redux";
+import {loadPosts} from "../../store/actions";
 
 const Home = ({ loadPosts }) => {
   return (
@@ -11,12 +14,16 @@ const Home = ({ loadPosts }) => {
         </h3>
       </div>
       <div className="col d-flex justify-content-center align-items-center">
-        <button className='home__btn-load btn-outline-dark' onClick={() => loadPosts()}>
-          Load posts
-        </button>
+        <Link to='/posts'>
+          <button className='home__btn-load btn-outline-info' onClick={() => loadPosts()}>
+            Load posts
+          </button>
+        </Link>
       </div>
     </div>
   )
 };
 
-export default Home;
+const mapStateToProps = () => ({});
+
+export default connect(mapStateToProps, {loadPosts})(Home);

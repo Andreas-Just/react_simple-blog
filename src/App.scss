@@ -1,8 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'src/assets/scss/func';
-
 @import 'src/component/Header/Header';
-@import 'src/component/Main/Main';
 @import 'src/component/Home/Home';
 @import 'src/component/Posts/Posts';
 @import 'src/component/Footer/Footer';
@@ -22,6 +20,16 @@
       flex-direction: column;
     }
 
+  }
+  &__btn {
+    padding: 1rem 4rem;
+    font-size: rem(18);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  button:focus {
+    outline: none;
   }
 }
 
