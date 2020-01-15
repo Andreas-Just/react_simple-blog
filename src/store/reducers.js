@@ -51,27 +51,22 @@ const initialState = {
       id: 2
     }*/
   ],
-  isLoading: false,
+  isFetching: true,
 };
 
 export const getNextState = (state = initialState, action) => {
   console.log(action);
   switch (action.type) {
-    case ACTION_TYPE.CHANGE_LOADING:
+    case ACTION_TYPE.TOGGLE_IS_FETCHING:
       return {
         ...state,
-        isLoading: false
-      };
-      case ACTION_TYPE.SELECT_AUTHOR:
-      return {
-        ...state,
-        selectedIndex: state.selectedIndex + action.selectedIndex
+        isFetching: action.isFetching
       };
     case ACTION_TYPE.LOAD_POSTS + '_SUCCESS':
       return {
         ...state,
         posts: [...action.payload.data],
-        isLoading: true
+        isFetching: false
       };
     default:
       return state;

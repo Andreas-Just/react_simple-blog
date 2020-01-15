@@ -1,16 +1,11 @@
 export const ACTION_TYPE = {
-  CHANGE_LOADING: 'CHANGE_LOADING',
-  SELECT_AUTHOR: 'SELECT_AUTHOR',
+  TOGGLE_IS_FETCHING: 'TOGGLE_IS_FETCHING',
   LOAD_POSTS: 'LOAD_POSTS',
 };
 
-export const selectAuthor = selectedIndex => ({
-  type: ACTION_TYPE.SELECT_AUTHOR,
-  selectedIndex,
-});
-
-export const changeLoading = () => ({
-  type: ACTION_TYPE.CHANGE_LOADING,
+export const toggleIsFetching = (isFetching) => ({
+  type: ACTION_TYPE.TOGGLE_IS_FETCHING,
+  isFetching
 });
 
 export const loadPosts = () => ({
