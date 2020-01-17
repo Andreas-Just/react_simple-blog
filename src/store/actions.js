@@ -1,10 +1,52 @@
+import qs from 'qs';
 export const ACTION_TYPE = {
-  SELECT_AUTHOR: 'select_author',
+  TOGGLE_IS_FETCHING: 'TOGGLE_IS_FETCHING',
+  LOAD_POSTS: 'LOAD_POSTS',
+  INPUT_ADD_HANDLER: 'INPUT_ADD_HANDLER',
+  CREATE_POST: 'CREATE_POST',
+  DELETE_POST: 'DELETE_POST',
 };
 
-export function selectAuthor(selectedIndex) {
-  return {
-    type: ACTION_TYPE.SELECT_AUTHOR,
-    selectedIndex
-  };
-}
+export const toggleIsFetching = (isFetching) => ({
+  type: ACTION_TYPE.TOGGLE_IS_FETCHING,
+  isFetching
+});
+
+export const loadPosts = () => ({
+  type: 'LOAD_POSTS',
+  payload: {
+    request: {
+      method: 'get',
+      url: 'posts',
+    }
+  }
+});
+
+export const inputAddHandler = (name, value) => ({
+  type: 'INPUT_ADD_HANDLER',
+  name,
+  value,
+});
+
+export const createPosts = (post) => ({
+  type: 'CREATE_POST',
+  payload: {
+    request: {
+      method: 'post',
+      url: 'posts',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: qs.stringify({...post}),
+    }
+  }
+});
+
+export const deletePosts = (id) => ({
+  type: 'DELETE_POST',
+  payload: {
+    request: {
+      method: 'delete',
+      url: `posts/${id}/`,
+    }
+  }
+});
+

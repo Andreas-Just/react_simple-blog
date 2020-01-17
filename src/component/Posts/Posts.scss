@@ -1,0 +1,16 @@
+.posts {
+
+  &__item {
+    box-shadow: 0 0.3rem 0.2rem -0.2rem rgba(52, 58, 64, 0.5);
+    padding-bottom: 1rem;
+    &:last-child {
+      box-shadow: none;
+    }
+  }
+  &__title {
+    text-align: center;
+  }
+  &__body {
+    text-align: left;
+  }
+}
