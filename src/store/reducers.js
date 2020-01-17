@@ -98,7 +98,7 @@ export const getNextState = (state = initialState, action) => {
         ...state,
         isRedirect: true
       };
-      case ACTION_TYPE.DELETE_POST + '_FAIL':
+      case ACTION_TYPE.DELETE_POST + '_SUCCESS' || ACTION_TYPE.DELETE_POST + '_FAIL':
       return {
         ...state,
         isReload: true,
