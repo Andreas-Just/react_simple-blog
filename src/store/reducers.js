@@ -1,4 +1,4 @@
-import { ACTION_TYPE } from "./actions";
+import { ACTION_TYPE } from './actions';
 
 const initialState = {
   posts: [
@@ -51,11 +51,18 @@ const initialState = {
       id: 2
     }*/
   ],
-  isFetching: true,
+  isFetching: false,
+  isRedirect: false,
+  isReload: false,
+  post: {
+    title: '',
+    body: '',
+  },
 };
 
 export const getNextState = (state = initialState, action) => {
   console.log(action);
+  console.log(state);
   switch (action.type) {
     case ACTION_TYPE.TOGGLE_IS_FETCHING:
       return {
@@ -66,7 +73,35 @@ export const getNextState = (state = initialState, action) => {
       return {
         ...state,
         posts: [...action.payload.data],
-        isFetching: false
+        isFetching: true,
+        isRedirect: false,
+        isReload: false
+      };
+    case ACTION_TYPE.INPUT_ADD_HANDLER:
+      return {
+        ...state,
+        post: {
+          ...state.post,
+          [action.name]: action.value
+        }
+      };
+      case ACTION_TYPE.CREATE_POST:
+      return {
+        ...state,
+        post: {
+          title: '',
+          body: ''
+        }
+      };
+      case ACTION_TYPE.CREATE_POST + '_SUCCESS':
+      return {
+        ...state,
+        isRedirect: true
+      };
+      case ACTION_TYPE.DELETE_POST + '_FAIL':
+      return {
+        ...state,
+        isReload: true,
       };
     default:
       return state;

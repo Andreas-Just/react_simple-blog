@@ -1,9 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
-import {loadPosts} from '../../store/actions';
 
-const Home = ({ loadPosts }) => {
+const Home = () => {
   return (
     <div className='home row justify-content-center align-items-center flex-grow-1 no-gutters'>
       <h3 className='home__salutation'>
@@ -15,6 +12,4 @@ const Home = ({ loadPosts }) => {
   )
 };
 
-const mapStateToProps = () => ({});
-
-export default connect(mapStateToProps, {loadPosts})(Home);
+export default Home;

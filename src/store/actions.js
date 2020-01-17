@@ -1,6 +1,10 @@
+import qs from 'qs';
 export const ACTION_TYPE = {
   TOGGLE_IS_FETCHING: 'TOGGLE_IS_FETCHING',
   LOAD_POSTS: 'LOAD_POSTS',
+  INPUT_ADD_HANDLER: 'INPUT_ADD_HANDLER',
+  CREATE_POST: 'CREATE_POST',
+  DELETE_POST: 'DELETE_POST',
 };
 
 export const toggleIsFetching = (isFetching) => ({
@@ -18,12 +22,30 @@ export const loadPosts = () => ({
   }
 });
 
-export const createPosts = () => ({
-  type: 'LOAD_POSTS',
+export const inputAddHandler = (name, value) => ({
+  type: 'INPUT_ADD_HANDLER',
+  name,
+  value,
+});
+
+export const createPosts = (post) => ({
+  type: 'CREATE_POST',
   payload: {
     request: {
       method: 'post',
       url: 'posts',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: qs.stringify({...post}),
+    }
+  }
+});
+
+export const deletePosts = (id) => ({
+  type: 'DELETE_POST',
+  payload: {
+    request: {
+      method: 'delete',
+      url: `posts/${id}/`,
     }
   }
 });

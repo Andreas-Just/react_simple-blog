@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink} from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -16,7 +16,7 @@ const Header = () => {
           <div className='navbar-nav flex-row justify-content-around'>
             <NavLink className='nav-item nav-link' to='/home'>Home</NavLink>
             <NavLink className='nav-item nav-link' to='/posts'>Posts</NavLink>
-            <NavLink className='nav-item nav-link' to='#'>Add post</NavLink>
+            <NavLink className='nav-item nav-link' to='/add'>Add post</NavLink>
           </div>
         </div>
       </nav>

@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 // import thunkMiddleware from 'redux-thunk';
 import { getNextState } from './reducers';
-import * as axios from "axios";
+import * as axios from 'axios';
 import axiosMiddleware from "redux-axios-middleware";
 
 const composeEnhancers =
