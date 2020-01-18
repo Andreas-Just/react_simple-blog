@@ -46,6 +46,7 @@ const AddPost = ({ post, isRedirect, inputAddHandler, createPosts }) => {
           <Modal
             title='Add post'
             body='Are you sure you want to add this post?'
+            // Are you sure you want to change this post?
             createPosts={createPosts}
             post={post}
           />
