@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {inputAddHandler, createPosts} from "../../store/actions";
 import {Redirect} from "react-router-dom";
+import Modal from "../common/Modal/Modal";
 
 const AddPost = ({ post, isRedirect, inputAddHandler, createPosts }) => {
   if (isRedirect) {
@@ -16,7 +17,7 @@ const AddPost = ({ post, isRedirect, inputAddHandler, createPosts }) => {
             <span className='input-group-text'>Title post</span>
           </div>
           <input
-            className='form-control'
+            className='form-control add-post__input'
             name='title'
             value={post.title}
             type='text'
@@ -28,7 +29,7 @@ const AddPost = ({ post, isRedirect, inputAddHandler, createPosts }) => {
             <span className='input-group-text'>Post text</span>
           </div>
           <textarea
-            className='form-control'
+            className='form-control add-post__textarea'
             name='body'
             value={post.body}
             onChange={(e) => inputAddHandler(e.target.name, e.target.value)}
@@ -37,10 +38,17 @@ const AddPost = ({ post, isRedirect, inputAddHandler, createPosts }) => {
         <div className='input-group-prepend mb-3'>
           <button
             className='btn btn-outline-info mr-3'
-            onClick={() => createPosts(post)}
+            data-toggle='modal'
+            data-target='#exampleModalCenter'
           >
             Submit
           </button>
+          <Modal
+            title='Add post'
+            body='Are you sure you want to add this post?'
+            createPosts={createPosts}
+            post={post}
+          />
           <button className='btn btn-outline-info'>Cancel</button>
         </div>
       </div>

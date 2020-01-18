@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import {loadPosts, toggleIsFetching, deletePosts} from '../../store/actions';
 import {connect} from 'react-redux';
+import {loadPosts, toggleIsFetching, deletePosts, saveId} from '../../store/actions';
+import {Edit, Delete} from '@material-ui/icons';
 import Spinner from '../common/Spinner/Spinner';
+import Modal from "../common/Modal/Modal";
 
 class Posts extends Component {
   componentDidMount() {
@@ -10,7 +12,7 @@ class Posts extends Component {
   }
 
   render() {
-    const { posts, isFetching, deletePosts, isReload, loadPosts, toggleIsFetching } = this.props;
+    const { posts, isFetching, deletePosts, isReload, loadPosts, toggleIsFetching, deleteId, saveId } = this.props;
     if (isReload) {
       toggleIsFetching(false);
       loadPosts();
@@ -20,18 +22,28 @@ class Posts extends Component {
         {!isFetching
           ? <Spinner/>
           : <div className='posts row no-gutters flex-column align-items-center'>
+            <Modal
+              title='Delete'
+              body='Are you sure you want to delete this post?'
+              deletePosts={deletePosts}
+              id={deleteId}
+            />
             <ul className='posts__list row no-gutters justify-content-center'>
               {posts.map(item => (
                 <li key={item.id} className='posts__item col-sm-11 col-md-9 col-lg-7 my-2'>
                   <div className='row justify-content-between flex-nowrap no-gutters'>
                     <h3 className='posts__title mb-2'>{item.title}</h3>
                     <div className='row align-items-center flex-nowrap no-gutters'>
-                      <button className='btn btn-outline-info'>Edit</button>
+                      <button className='posts__btn btn btn-outline-info'>
+                        <Edit />
+                      </button>
                       <button
-                        className='btn btn-outline-info'
-                        onClick={() => deletePosts(item.id)}
+                        className='posts__btn btn btn-outline-info'
+                        data-toggle='modal'
+                        data-target='#exampleModalCenter'
+                        onClick={() => saveId(item.id)}
                       >
-                        Delete
+                        <Delete />
                       </button>
                     </div>
                   </div>
@@ -54,6 +66,7 @@ const mapStateToProps = state => ({
   posts: state.posts,
   isFetching: state.isFetching,
   isReload: state.isReload,
+  deleteId: state.deleteId,
 });
 
-export default connect(mapStateToProps, {loadPosts, toggleIsFetching, deletePosts})(Posts);
+export default connect(mapStateToProps, {loadPosts, toggleIsFetching, deletePosts, saveId})(Posts);

@@ -5,6 +5,7 @@ export const ACTION_TYPE = {
   INPUT_ADD_HANDLER: 'INPUT_ADD_HANDLER',
   CREATE_POST: 'CREATE_POST',
   DELETE_POST: 'DELETE_POST',
+  SAVE_ID: 'SAVE_ID',
 };
 
 export const toggleIsFetching = (isFetching) => ({
@@ -48,5 +49,10 @@ export const deletePosts = (id) => ({
       url: `posts/${id}/`,
     }
   }
+});
+
+export const saveId = (id) => ({
+  type: 'SAVE_ID',
+  id
 });
 
