@@ -23,7 +23,7 @@ class Posts extends Component {
           ? <Spinner/>
           : <div className='posts row no-gutters flex-column align-items-center'>
             <Modal
-              title='Delete'
+              title='Delete post'
               body='Are you sure you want to delete this post?'
               deletePosts={deletePosts}
               id={deleteId}

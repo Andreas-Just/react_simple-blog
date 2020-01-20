@@ -11,7 +11,7 @@ const AddPost = ({ post, isRedirect, inputAddHandler, createPosts }) => {
   return (
     <div className='add-post row flex-column align-items-center flex-grow-1 no-gutters'>
       <h3 className='add-post__title mt-5'>Add new post</h3>
-      <div className="add-post__form row justify-content-end flex-grow-1 align-items-start my-5 w-75 no-gutters">
+      <div className="add-post__form row justify-content-end flex-grow-1 align-items-start mt-4 w-75 no-gutters">
         <div className='input-group mb-3'>
           <div className='input-group-prepend'>
             <span className='input-group-text'>Title post</span>
@@ -44,13 +44,12 @@ const AddPost = ({ post, isRedirect, inputAddHandler, createPosts }) => {
             Submit
           </button>
           <Modal
-            title='Add post'
+            title='Add new post'
             body='Are you sure you want to add this post?'
             // Are you sure you want to change this post?
             createPosts={createPosts}
             post={post}
           />
-          <button className='btn btn-outline-info'>Cancel</button>
         </div>
       </div>
     </div>
