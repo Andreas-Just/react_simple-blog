@@ -29,38 +29,51 @@ export const getNextState = (state = initialState, action) => {
         isRedirect: false,
         isReload: false
       };
-    case ACTION_TYPE.INPUT_ADD_HANDLER:
+    case ACTION_TYPE.INPUT_CLEAR_HANDLER:
       return {
         ...state,
         post: {
           ...state.post,
-          [action.name]: action.value
+          title: '',
+          body: '',
         }
       };
-      case ACTION_TYPE.CREATE_POST:
+    case ACTION_TYPE.INPUT_CHANGE_HANDLER:
       return {
         ...state,
         post: {
-          title: '',
-          body: ''
+          ...state.post,
+          [action.name]: action.value,
         }
       };
-      case ACTION_TYPE.CREATE_POST + '_SUCCESS':
+    case ACTION_TYPE.CREATE_POST + '_SUCCESS':
       return {
         ...state,
-        isRedirect: true
+        isRedirect: true,
       };
-      case ACTION_TYPE.DELETE_POST + '_SUCCESS':
+    case ACTION_TYPE.UPDATE_POSTS + '_SUCCESS':
+      return {
+        ...state,
+        isRedirect: true,
+      };
+    case ACTION_TYPE.DELETE_POST + '_SUCCESS':
       return {
         ...state,
         isReload: true,
       };
-      case ACTION_TYPE.SAVE_ID:
+    case ACTION_TYPE.SAVE_ID:
       return {
         ...state,
         deleteId: action.id,
       };
-
+    case ACTION_TYPE.TRANSFER_DATA_FOR_EDITING:
+      return {
+        ...state,
+        post: {
+          title: action.title,
+          body: action.body,
+        }
+      };
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Modal = (props) => {
-  const {title, body, deletePosts, id, createPosts, post} = props;
+  const {title, body, updatePosts, createPosts, deletePosts, id, post} = props;
   return (
     <div className='modal fade' id='exampleModalCenter' tabIndex='-1' role='dialog'
          aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
@@ -22,8 +22,9 @@ const Modal = (props) => {
             </button>
             <button
               className='btn btn-info'
-              onClick={ id ? () => deletePosts(id)
+              onClick={ post && id ? () => updatePosts(post, id)
                 : post ? () => createPosts(post)
+                : id ? () => deletePosts(id)
                 : null
               }
               data-dismiss='modal'

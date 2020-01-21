@@ -1,0 +1,17 @@
+.edit-post {
+
+  &__input {
+    padding: rem(25) rem(10);
+    &:focus {
+      border-color: $info;
+      box-shadow: none;
+    }
+  }
+  &__textarea {
+    padding: rem(10);
+    &:focus {
+      border-color: $info;
+      box-shadow: none;
+    }
+  }
+}
