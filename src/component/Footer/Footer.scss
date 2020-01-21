@@ -1,12 +1,12 @@
 .footer {
-  padding: rem(15) rem(20) rem(10);
+  padding: rem(20) rem(20) rem(15);
   background-color: $gray-300;
 
   &__auth p {
     text-align: left;
   }
   &__social a:nth-child(n+2) {
-    margin-left: rem(20);
+    margin-left: rem(40);
   }
   
   .footer__icon {

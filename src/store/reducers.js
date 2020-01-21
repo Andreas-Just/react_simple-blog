@@ -13,8 +13,6 @@ const initialState = {
 };
 
 export const getNextState = (state = initialState, action) => {
-  console.log(action);
-  console.log(state);
   switch (action.type) {
     case ACTION_TYPE.TOGGLE_IS_FETCHING:
       return {
@@ -24,7 +22,7 @@ export const getNextState = (state = initialState, action) => {
     case ACTION_TYPE.LOAD_POSTS + '_SUCCESS':
       return {
         ...state,
-        posts: [...action.payload.data],
+        posts: [...action.payload.data].reverse(),
         isFetching: true,
         isRedirect: false,
         isReload: false

@@ -3,12 +3,11 @@ import {Delete, Edit} from "@material-ui/icons";
 import {Link} from "react-router-dom";
 
 const Posts = ({ posts, saveId, transferDataForEditing }) => {
-  const reversedPosts = posts.reverse();
 
   return (
     <ul className='posts__list row no-gutters justify-content-center'>
-      {reversedPosts.map(item => (
-        <li key={item.id} className='posts__item col-sm-11 col-md-9 col-lg-7 my-2'>
+      {posts.map(item => (
+        <li key={item.id} className='posts__item col-11 col-md-9 col-lg-7 my-2'>
           <div className='row justify-content-between flex-nowrap no-gutters'>
             <h3 className='posts__title mb-2'>{item.title}</h3>
             <div className='row align-items-center flex-nowrap no-gutters'>

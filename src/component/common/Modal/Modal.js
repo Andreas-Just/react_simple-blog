@@ -7,13 +7,13 @@ const Modal = (props) => {
          aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
       <div className='modal-dialog modal-dialog-centered' role='document'>
         <div className='modal-content'>
-          <div className='modal-header'>
-            <h5 className='modal-title' id='exampleModalCenterTitle'>{title}</h5>
+          <div className='modal__header modal-header'>
+            <h5 className='modal__title modal-title' id='exampleModalCenterTitle'>{title}</h5>
             <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
-              <span aria-hidden='true'>&times;</span>
+              <span className='modal__true' aria-hidden='true'>&times;</span>
             </button>
           </div>
-          <div className='modal-body'>
+          <div className='modal__body modal-body py-4'>
             {body}
           </div>
           <div className='modal-footer'>

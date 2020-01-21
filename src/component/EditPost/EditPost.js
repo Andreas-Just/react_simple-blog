@@ -39,7 +39,7 @@ const EditPost = ({ match, post, isRedirect, inputChangeHandler, updatePosts }) 
         </div>
         <div className='input-group-prepend mb-3'>
           <button
-            className='btn btn-outline-info mr-3'
+            className='edit-post__btn btn btn-outline-info mr-3'
             data-toggle='modal'
             data-target='#exampleModalCenter'
           >

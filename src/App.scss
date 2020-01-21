@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'src/assets/scss/func';
+@import 'src/assets/scss/extend';
 @import 'component/common/Spinner/Spinner';
+@import 'component/common/Modal/Modal';
 @import 'src/component/Header/Header';
 @import 'src/component/Home/Home';
 @import 'src/component/Posts/Posts';
@@ -23,12 +25,6 @@
       flex-direction: column;
     }
 
-  }
-  &__btn {
-    padding: 1rem 4rem;
-    font-size: rem(18);
-    font-weight: bold;
-    text-transform: uppercase;
   }
 
   button:focus {

@@ -14,4 +14,7 @@
       box-shadow: none;
     }
   }
+  &__btn {
+    @extend %btn;
+  }
 }
