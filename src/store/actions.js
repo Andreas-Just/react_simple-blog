@@ -17,7 +17,7 @@ export const toggleIsFetching = (isFetching) => ({
 });
 
 export const loadPosts = () => ({
-  type: 'LOAD_POSTS',
+  type: ACTION_TYPE.LOAD_POSTS,
   payload: {
     request: {
       method: 'get',
@@ -27,17 +27,17 @@ export const loadPosts = () => ({
 });
 
 export const inputClearHandler = () => ({
-  type: 'INPUT_CLEAR_HANDLER',
+  type: ACTION_TYPE.INPUT_CLEAR_HANDLER,
 });
 
 export const inputChangeHandler = (name, value) => ({
-  type: 'INPUT_CHANGE_HANDLER',
+  type: ACTION_TYPE.INPUT_CHANGE_HANDLER,
   name,
   value,
 });
 
 export const transferDataForEditing = (title, body) => ({
-  type: 'TRANSFER_DATA_FOR_EDITING',
+  type: ACTION_TYPE.TRANSFER_DATA_FOR_EDITING,
   title,
   body,
 });
@@ -55,7 +55,7 @@ export const createPosts = (post) => ({
 });
 
 export const updatePosts = (post, id) => ({
-  type: 'UPDATE_POSTS',
+  type: ACTION_TYPE.UPDATE_POSTS,
   payload: {
     request: {
       method: 'put',
@@ -67,7 +67,7 @@ export const updatePosts = (post, id) => ({
 });
 
 export const deletePosts = (id) => ({
-  type: 'DELETE_POST',
+  type: ACTION_TYPE.DELETE_POST,
   payload: {
     request: {
       method: 'delete',
@@ -77,7 +77,6 @@ export const deletePosts = (id) => ({
 });
 
 export const saveId = (id) => ({
-  type: 'SAVE_ID',
+  type: ACTION_TYPE.SAVE_ID,
   id
 });
-
