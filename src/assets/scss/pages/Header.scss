@@ -1,0 +1,23 @@
+.header {
+  &__brand {
+    display: flex;
+    align-items: center;
+    font-size: rem(21);
+    text-transform: uppercase;
+  }
+  .header__brand-icon {
+    font-size: rem(30);
+  }
+  &__nav {
+    font-size: rem(18);
+    text-transform: uppercase;
+  }
+  &__nav-item {
+    display: flex;
+    align-items: center;
+  }
+  .header__nav-icon {
+    margin-right: rem(3);
+    font-size: rem(18);
+  }
+}

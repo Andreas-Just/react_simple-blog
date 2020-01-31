@@ -1,0 +1,32 @@
+.home {
+
+  &__salutation {
+    font-size: rem(28);
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 992px) {
+  .home {
+
+    &__salutation {
+      font-size: rem(26);
+    }
+  }
+}
+@media (max-width: 768px) {
+  .home {
+
+    &__salutation {
+      font-size: rem(22);
+    }
+  }
+}
+@media (max-width: 576px) {
+  .home {
+
+    &__salutation {
+      font-size: rem(19);
+    }
+  }
+}

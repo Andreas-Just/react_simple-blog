@@ -1,0 +1,14 @@
+.modal {
+
+  &__title {
+    font-size: rem(25);
+  }
+  &__body {
+    font-weight: 500;
+    font-size: rem(18);
+    background-color: lighten($info, 45%);
+  }
+  &__true {
+    color: firebrick;
+  }
+}

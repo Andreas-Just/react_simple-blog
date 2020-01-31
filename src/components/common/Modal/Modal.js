@@ -1,0 +1,41 @@
+import React from 'react';
+
+const Modal = (props) => {
+  const {title, body, updatePosts, createPosts, deletePosts, id, post} = props;
+  return (
+    <div className='modal fade' id='exampleModalCenter' tabIndex='-1' role='dialog'
+         aria-labelledby='exampleModalCenterTitle' aria-hidden='true'>
+      <div className='modal-dialog modal-dialog-centered' role='document'>
+        <div className='modal-content'>
+          <div className='modal__header modal-header'>
+            <h5 className='modal__title modal-title' id='exampleModalCenterTitle'>{title}</h5>
+            <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
+              <span className='modal__true' aria-hidden='true'>&times;</span>
+            </button>
+          </div>
+          <div className='modal__body modal-body py-4'>
+            {body}
+          </div>
+          <div className='modal-footer'>
+            <button className='btn btn-secondary' data-dismiss='modal'>
+              No
+            </button>
+            <button
+              className='btn btn-info'
+              onClick={ post && id ? () => updatePosts(post, id)
+                : post ? () => createPosts(post)
+                : id ? () => deletePosts(id)
+                : null
+              }
+              data-dismiss='modal'
+            >
+              Yes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+};
+
+export default Modal;

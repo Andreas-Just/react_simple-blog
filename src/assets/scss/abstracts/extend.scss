@@ -1,0 +1,9 @@
+%btn {
+  padding: .4rem 1.2rem;
+  font-weight: 500;
+  background-color: $gray-200;
+
+  &:hover {
+    background-color: $info;
+  }
+}
