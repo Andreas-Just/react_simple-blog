@@ -8,6 +8,7 @@
 - [PULL REQUEST](https://github.com/Andreas-Just/simple-blog/pull/1)
 
 ___
+
 ## Task
 
 Hey, let's build simple Blog.
