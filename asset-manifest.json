@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/simple-blog/static/css/main.c6f8983f.chunk.css",
+    "main.css": "/simple-blog/static/css/main.636d0690.chunk.css",
     "main.js": "/simple-blog/static/js/main.07f736be.chunk.js",
     "main.js.map": "/simple-blog/static/js/main.07f736be.chunk.js.map",
     "runtime-main.js": "/simple-blog/static/js/runtime-main.27cb8a17.js",
@@ -8,14 +8,14 @@
     "static/js/2.cd59111f.chunk.js": "/simple-blog/static/js/2.cd59111f.chunk.js",
     "static/js/2.cd59111f.chunk.js.map": "/simple-blog/static/js/2.cd59111f.chunk.js.map",
     "index.html": "/simple-blog/index.html",
-    "precache-manifest.cc898cb1c1fc35c98eca9f92203b7455.js": "/simple-blog/precache-manifest.cc898cb1c1fc35c98eca9f92203b7455.js",
+    "precache-manifest.e7b3a00b54401213466f6976d36e167e.js": "/simple-blog/precache-manifest.e7b3a00b54401213466f6976d36e167e.js",
     "service-worker.js": "/simple-blog/service-worker.js",
-    "static/css/main.c6f8983f.chunk.css.map": "/simple-blog/static/css/main.c6f8983f.chunk.css.map"
+    "static/css/main.636d0690.chunk.css.map": "/simple-blog/static/css/main.636d0690.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.27cb8a17.js",
     "static/js/2.cd59111f.chunk.js",
-    "static/css/main.c6f8983f.chunk.css",
+    "static/css/main.636d0690.chunk.css",
     "static/js/main.07f736be.chunk.js"
   ]
 }
