@@ -18,6 +18,7 @@
   }
   &__textarea {
     padding: rem(10);
+    resize: none;
     &:focus {
       border-color: $info;
       box-shadow: none;
