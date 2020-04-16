@@ -2,7 +2,7 @@
 
 
 
-####**Result**
+#### Result
 
 - [DEMO LINK](https://andreas-just.github.io/simple-blog/#/)
 - [PULL REQUEST](https://github.com/Andreas-Just/simple-blog/pull/1)
